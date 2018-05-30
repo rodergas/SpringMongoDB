@@ -9,7 +9,6 @@
     <bytecodeTargetLevel>
       <module name="SpringMongoDB_generated" target="1.9" />
       <module name="SpringMongoDB_intTest" target="1.9" />
-      <module name="SpringMongoDB_querydsl" target="1.9" />
     </bytecodeTargetLevel>
   </component>
 </project>

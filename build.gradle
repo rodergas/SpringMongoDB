@@ -13,7 +13,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-
+        classpath "gradle.plugin.com.ewerk.gradle.plugins:querydsl-plugin:1.0.9"
 
     }
 }
@@ -43,6 +43,30 @@ apply plugin: 'idea'
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
+
+configurations {
+    queryDslTool
+}
+
+apply plugin: 'com.ewerk.gradle.plugins.querydsl'
+
+sourceSets {
+    main {
+        java {
+            srcDir "$buildDir/generated/source/app/main"
+        }
+    }
+}
+
+dependencies {
+    compile "com.querydsl:querydsl-mongodb:4.1.4"
+    compileOnly "com.querydsl:querydsl-apt:4.1.4"
+}
+
+querydsl {
+    springDataMongo = true
+    querydslSourcesDir = "target/generated-sources/annotations"
+}
 
 dependencies {
     compile('javax.xml.bind:jaxb-api:2.3.0')

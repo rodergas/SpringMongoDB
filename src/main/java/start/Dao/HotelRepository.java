@@ -9,9 +9,11 @@ import start.Entity.Hotel;
 import java.util.List;
 
 @Repository
-public interface HotelRepository extends MongoRepository<Hotel, String>{
+public interface HotelRepository extends MongoRepository<Hotel, String>,QuerydslPredicateExecutor<Hotel>{
     List<Hotel> findByPricePerNightLessThan(int maxPrice);
 
     @Query(value = "{\"address.city\":?0}")
     List<Hotel> findByCity(String city);
+
+
 }
