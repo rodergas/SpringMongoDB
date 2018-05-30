@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringMongoDB_generated" target="1.9" />
+      <module name="SpringMongoDB_intTest" target="1.9" />
+      <module name="SpringMongoDB_querydsl" target="1.9" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
